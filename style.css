@@ -17,6 +17,8 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #4a515d;
+  position: sticky;
+  top: 0;
 }
 
 .topnav a {
@@ -136,4 +138,10 @@ cite {
 }
 .about {
   background-color: #49515d;
+}
+img {
+  border-radius: 50%;
+}
+.headLine {
+  margin-top: 150px;
 }

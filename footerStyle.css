@@ -163,3 +163,9 @@ i {
     margin-left: 0;
   }
 }
+
+@media (min-height: 800px) {
+  footer {
+    position: static;
+  }
+}
