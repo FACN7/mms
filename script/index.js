@@ -9,14 +9,13 @@ function checkEmail(email) {
 
 var my_func = function(event) {
     event.preventDefault();
-    localStorage.clear();
+    // localStorage.clear();
     /*Getting values from html tags*/
     var lastname=document.querySelector("input[Name=lastname]");
     var firstname=document.querySelector("input[Name=firstname]");
-    var email=document.querySelector("input[Name=email]");
-    var e = document.getElementById("country");
-    var country = e.options[e.selectedIndex].text;
+    var email=document.querySelector("input[Name=email]");   
     var msg=document.querySelector("#subject");
+
     /*Validations - except for the mail*/
     if((lastname.value.length ==0)||(firstname.value.length ==0) ||(msg.value.length ==0))
         {alert("Please Fill all fields");}
@@ -26,16 +25,17 @@ var my_func = function(event) {
               firstname:firstname.value,
               lastname:lastname.value,
               email:email.value,
-              country:country,
               msg:msg.value
           }
           console.log(obj);
-          localStorage.setItem('clientMSG', JSON.stringify(obj));
+          localStorage.setItem(firstname.value+' clientMSG', JSON.stringify(obj));
 
         }
     /*  if(lastname.value.length>0)
         lastname.style.borderColor="##006400";
     */
+
+    location.reload();
 
 };
 
@@ -43,4 +43,4 @@ var my_func = function(event) {
 var form = document.querySelector("form");
 
 // attach event listener
-form.addEventListener("submit", my_func, true);
+// form.addEventListener("submit", my_func, true);
